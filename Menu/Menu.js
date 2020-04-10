@@ -9,8 +9,10 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
 
+
+
+/*
   Step 1: Write a function that will create a menu component as seen below:
 
   <div class="menu">
@@ -28,8 +30,31 @@ let menuItems = [
 
   Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
 
+
+  
   Step 5: return the menu component.
 
   Step 6: add the menu component to the DOM.
   
 */
+
+
+function menuWork (menuu){
+  const newDiv1 = document.createElement('div');
+  newDiv1.classList.add('menu');
+  const listItem = document.createElement('ul');
+  newDiv1.append(listItem);
+  menuu.forEach(x => {
+    const newNew = document.createElement('li')
+    newNew.textContent = x
+    listItem.append(newNew);
+  })
+const menubuttonn = document.querySelector('.menu-button');
+menubuttonn.addEventListener('click', event => {
+  newDiv1.classList.toggle('menu--open');
+})
+return newDiv1;
+}
+
+
+document.querySelector('.header').append(menuWork(menuItems));
